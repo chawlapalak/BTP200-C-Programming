@@ -1,0 +1,46 @@
+Palak Chawla
+BSD
+118834175
+pchawla5@myseneca.ca
+Lab 3
+
+
+
+
+1)	How many elements are there in each C-style character string that stores a family or given name for the account? Why?
+
+The number of characters will be the "number of character inserted from console +1 " if name length is less than max_name_length and in case of max_name_length there will be 41 elements in each C-style character string that stores a family or given name for the account because a C-style string is simply an array of characters that uses a null terminator. A null terminator is a special character (‘\0’, ascii code 0) used to indicate the end of the string. More generically, A C-style string is called a null-terminated string. Therefore in this example the max_name_length has value of 40.  This value represents the maximum number of characters for any name of the account holder (the null byte '\0' not included). so including the null byte which will be appended automatically to end of string i.e max_name_length +1 eg: char m_familyName[max_name_length+1]; there will be total 41 elements in the C-style character String.
+
+
+
+
+
+
+2)	Your class declares two member functions named set(...).  In C, this would generate an error.  Name the feature of C++that allows this.
+
+Multiple functions can have same name in C++ if we need, but must have different parameters. This Phenomenon is known as Function overloading
+For example:
+
+void set(int a, int b) { }
+void set(float a, int b) { }
+void set(int a, int b, int c) { }
+
+Here we have overloaded function "set", and  all functions will work within the same program. When calling the set, the program will run the function which corresponding to the arguments you pass through. For example, if you called set(5.5, 6), it would run the second function.The definition of the function must differ from each other by the types and/or the number of arguments in the argument list. You cannot overload function declarations that differ only by return type.
+C is not a Object Oriented language so it do not support function overloading as its a OOPS phenomenon
+
+3)	What have you learned during this workshop?
+
+Through this workshop I have learned to
+•	Definition of a class
+•	how to declare data members and function in class and modify access of data members
+•   import class in other file
+•	privatization data within the class type
+•	How to create and initialize object of a class
+•	Use of public member function to access data inside an object of a class
+•	Proper Usage of standard C++ library like iostream for input output ,cstring for string ,iomanip for input out manipulation
+•   Use of data type like int,char,bool etc
+•   C function definition and return type
+
+
+Quiz 3 Reflection :
+Ques 2 : When the constructor is not given any argument, then the default constructor is formed.

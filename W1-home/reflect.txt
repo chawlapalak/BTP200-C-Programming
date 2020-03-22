@@ -1,0 +1,29 @@
+
+Name : Palak Chawla
+
+Student ID : 118834175
+
+Date : 29 Jan 2018
+
+Workshop1 : At home
+
+Email : pchawla5@myseneca.ca
+
+1. What is a namespace? Explain its purpose.
+Namespace is a declaration  to avoid confusions between the similar named variables,functions, modules etc.
+It is very useful in bigger projects as there are various identifiers with similar looking names.
+
+2. Why are header files needed? Explain.
+Header files are needed to minimize the redundant work in each source file. 
+You can declare a function in a header file and use it in multiple sourcecode files.
+
+3. In the instructions above, you were directed to compile only .cpp files but
+not the .h files. Explain why you should never compile header files.
+because Header files are already included in the cpp files. #include 
+
+4. Explain why you should never include .cpp files in another file.
+Because compiler will compile .cpp file and if we will include .cpp file in another file , then compiler will compile same file multiple time.
+
+5. Explain in your own words what have you learned on this workshop.
+I learned in this workshop :
+How to use namespace, and how to use compilation safe guards in header files.

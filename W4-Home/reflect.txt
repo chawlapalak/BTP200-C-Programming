@@ -1,0 +1,60 @@
+﻿ Name : Palak Chawla
+
+Student id : 118834175
+
+BTP200SAA
+
+Date : 19 Feb 2018
+
+Email : pchawla5@myseneca.ca
+
+
+
+
+1)	What is a safe empty state? Could you define another state as the safe empty state?
+	Inside a constructor the instance variable of a object are initialized and it is ensured that they have well defined state from the time of creation. This state is known as safe empty state. Objects behave as expected from them to be if they are in safe empty state and a member function is called on them, they do not break. The safe empty state is identical for all objects of the same class. If the data provided is invalid, we can reject the data  and store default values that identify the object's state as safe empty state.
+	we can select one data member to hold the special value that identifies a safe empty state. we only need to interrogate that data member to determine whether object is in safe empty state. We can use any default value of our choice to make a safe empty state but ensure that value for instance variable is used only for safe empty state.
+
+		for eg: If a object has "int id " as a instance varaible, safe empty state can be i=0 or i = any garbage value, or i= some value(beyond range of i). It entirely depends on our requirements and programming logic.
+
+2)	Describe how you have minimized code duplication.
+	I observed that I was doing code duplication while I was initializing data to safe empty state, in default constructor, in 2 parameter constructor and in 5 parameter constructor.
+ So in order to avoid code duplication I kept the common code in new private member function named Construct which initializes value of instance variable to safe empty state and has been called in section in different constructor whenever we need to initialize object to safe empty state.
+
+
+
+
+3)	Explain why the canTravelWith(...) member function can access the private data of the object referenced in its parameter.
+	The most important use of C++ references is for "pass-by-reference" function and method parameters.  Passing an argument by reference means that the function or method is permitted to (and is capable of) modifying the actual argument because a reference variable is an alias, that is, another name for an already existing variable. Once a reference is initialized with a variable, either the variable name or the reference name may be used to refer to the variable and modify its value, in this case canTravelWith receives reference as an parameter of another object, so this reference acts as an alias therefore it can be used to access and modify value of private data members of that object. 
+
+
+4)	What statement do you need to add to ensure that the strncpy(...) function executes correctly?
+	In case of large buffer string overflow condition  strncpy(...) does not put null character at the end of string. Not terminated string is a time bomb in C+= as most of the operations are pointer based hence an illegal computation at any address can cause system failure, thus we need to ensure that we have terminated string with null character when we use strncpy(), by adding *dest='\0' at the end after copying string. 
+	
+5)	Explain what you have learned in this workshop.
+	In this workshop I have learned:
+	•Safe empty state 
+	•Constructor declaration and definition
+	•default Constructor
+	•parameterized Constructor
+	•Code re usability by segregating common code in seperate function
+	•constructor overloading
+	•Use of reference variable
+	•Pass by reference in function
+	•safe use of strncpy()
+	•use of "this" pointer
+
+	
+	
+Quiz X Reflection:
+Q1:Not attempted.
+Free Helper Function : A free or loosely coupled helper function is a function that obtains all of its information from the public member functions of the class that it supports.  A free helper function does not require access to the private members of its class. 
+ The coupling between a free helper function and its class is minimal, which is an ideal design solution. 
+
+Friend Function :Friendship grants helper functions access to the private members of a class.  By granting friendship status, a class lets a helper function access to any of its private members: data members or member functions.  Friendship minimizes class bloat.
+
+Q3:
+Attempted : A reference is an address of other object.
+
+Answer : A reference is an alias for a variable or object.  Object-oriented languages rely on referencing.  A reference in a function call passes the variable or object rather than a copy.  In other words, a reference is an alternative to the pass by address mechanism available in the C language.
+  Pass-by-reference code is notably more readable than pass-by-address code. 
