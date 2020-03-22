@@ -1,0 +1,63 @@
+﻿/*Name: Palak Chawla
+
+	Student id : 118834175
+
+	BTP200SAA
+
+	Date : 26 Feb 2018
+
+	Email : pchawla5@myseneca.ca
+	*/
+
+
+1.	The operator+ returns a Fraction object. Explain why this operator should not return a reference to a Fraction object.
+	
+	- The Operator+ is used to add two numbers and store the result in a new variable. In this scenario the operator+ is used to add two fractions and store the results in a new fraction. That why it do not return a reference to a fraction object as it return a new fraction object containing the resultant of two fraction object. A reference is an alias for a variable or object. A reference in a function call passes the variable or object rather than a copy.  In other words, a reference is an alternative to the pass by address mechanism available in the C language and this we are not updating value in original fraction as in case of operator+= whereas we are returning a new fraction with contains addition result of two fractions.
+
+2.	List the temporary objects in the tester module.
+	-In tester modules temporary objects are created at two places:
+	 cout << "a + b equals ";
+    (a + b).display();
+    cout << endl;
+
+    cout << "b + d equals ";
+    (b + d).display();
+    cout << endl;
+	In both the cases operator+ returns a temporary object whose values are displayed and then the objects get destroyed as the execution passes by that point.
+		
+
+
+3.	List the simplifications that you made to your class to minimize duplication.
+	-In my code the code to check safe empty state was redundant and duplicated in all operator methods hence I have made a separate method  bool isValid() to check safe empty state and avoid code duplication 
+	
+	bool Fraction::isValid(const Fraction & rhs) const
+	{
+		if (isEmpty() || rhs.isEmpty())
+			return true;
+		return false;
+	}
+	
+	Similarly in each member operator method I have to check whether both fractions are valid before performing operation on them so the code for this was duplicated in each method inorder to avoid this I have made a method bool bothValid and called that in each method
+	
+	bool Fraction::bothValid(const Fraction & rhs) const
+	{
+		if (!isEmpty() && !rhs.isEmpty())
+			return true;
+		return false;
+	}
+
+
+4.	Explain what you have learned in this workshop.
+	•overload an operator as a member function of a class, various type of opeator +, +=, * , == , +=
+	•access the current object from within a member function using this keyword, and return using *this
+	•identify the lifetime of an object, including a temporary object (use of temporary object in main method and inside operator method)
+	•Use of reference in operator+= method to store the resultant value in same variable
+	•Remove code duplicacy using two new methods to do redundant task(isValid, bothValid)
+	•Calculation of gcd of two numbers and code related to fraction
+
+	
+	
+	
+	
+	
+	

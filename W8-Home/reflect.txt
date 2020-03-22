@@ -1,0 +1,27 @@
+/*Name : Palak Chawla
+ID: 118834175
+email : pchawla5@myseneca.ca
+Sub: BTP200SAA*/
+
+1.	What is the difference between an abstract base class and a concrete class?
+Ans -> Abstract Class is a base class, it may contain partially implemented methods, Some or all declared functions are purely virtual, and it cannot be instantiated.
+	   
+	   Concrete Class is a default class, All methods are completely implemented, No purely virtual functions, and it can be instantiated.
+
+2.	Identify the functions that shadow functions of the same name in your solution?
+
+ANS-> ChequingAccount::credit() shadows Account::credit() in the main() function,
+	  ChequingAccount::debit() shadows Account::debit() in the main() function,
+	  ChequingAccount::monthEnd() shadows SavingsAccount::monthEnd() in the main() function,
+	  ChequingAccount::display() shadows SavingsAccount::display().
+
+3.	Explain what have you learned in this workshop.
+Ans-> derive classes from base classes 
+	  usage of methods defined in an abstract class within the derived class
+	  shadowing 
+	  pure virtual functions
+
+	  Quiz 9 Reflection
+	  Q2: Dynamic cast is used to cast pointers to related types.Dynamic cast is casting method to find out the object's class at runtime.
+	  
+	  Q3:Adhoc polymorphism is also called function or operator overloading.Ad-hoc polymorphism refers to when a value is able to adopt any one of several types.

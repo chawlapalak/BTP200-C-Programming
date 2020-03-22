@@ -1,0 +1,36 @@
+/*Name : Palak Chawla
+Section : SCC
+ID : 118834175
+WK7- At home
+email : pchawla5@myseneca.ca
+13 March 2019*/
+
+In this workshop, I learnt about the inheritance. First in the lab part, I made a class which we used later on, as a base class
+for SuperHero class. And most important thing was how to use the base class's public data in the derived class.
+For example, in the parameterized constructor, we used three parameters from the base class only, I was kind of stuck for some time in that one.
+
+1.	Does the Hero class need to know about the existence of the SuperHero class? 
+(Hint: do a search in Hero.cpp, does the word “SuperHero” appear anywhere?) 
+NO.HEro class is a base class which can have multiple derived classes like SuperHEro class.
+And it doesnot need to have information about its all the derived classes due to its heirarchy.
+
+2.	Does the SuperHero class need to know about the existence of the Hero class?
+ (Hint: do a search in SuperHero.cpp, does the word “Hero” appear anywhere?)
+Yes, it must know the Hero class because SuperHero class is the child class of Hero Class.
+It basically is inheriting the structure of Hero class and using all the public functions of Hero class as mentioned in .h file.
+
+3.	The program prints out “Ancient Battle!” when 2 Heroes fight. It prints out “Super Fight!” when 2 SuperHeroes fight. 
+When you tried to make a Hero fight a SuperHero, what did it print out?
+It printed out "Ancient Battle!" as the fight is between one HEro and one SuperHero. And in this case, SuperHero is considered as Hero due to
+its derived hierarchy and is converted to a Hero object and call base class method.
+
+Quiz #7 reflection:
+
+Q:What is protected and how we use it?
+A:The keyword 'protected' limits access to the members of a derived class.
+
+Q: What is the difference between the abstract class and concrete class?
+Abstract class can't be instantiated because its one method atleat is not implemented where as
+Concrete class can be instantiated because its methods are implemented.
+
+

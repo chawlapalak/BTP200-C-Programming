@@ -1,0 +1,26 @@
+/*Name: Palak Chawla
+Id: 118834175
+Email : pchawla5@myseneca.ca
+Date : 10 April 2018*/
+
+1. What happens if you try to put your templated functions in Data.cpp? Does your source code compile if you move all functions to Data.h? Explain.
+
+ANS- A compile time error occurs. If templated function code is written in CPP file the compiler cant see the function and the template at the same time. The compiler cant see definition of design() and readRow() function.
+
+2. Move one templated function into ws9_lab.cpp. Does it work now? Do you need to define the template function above main(), before it is used, or can you define it below main()?
+
+ANS- It doesn't work if templated func for example min is move to main() whether it is defined above main() and below main()
+
+
+3. Could you have done this lab without templates, by just overloading your functions in Data.h to accept integer and double arguments? What is the advantage of using templates?
+
+ANS- Yes we can overload functions in Data.h to accept integer and double arguments, advantages of using templates:
+	>> Use templates in situations that result in duplication of the same code for multiple types. 
+		For example, we can use function templates to create a set of functions that apply the same algorithm to different data types. 
+	>> You can also use class templates to develop a set of typesafe classes.
+	>>Templates allow for cleaner code and dynamic parameter interpretations
+
+4. Are the following equivalent? template<class T>
+template<typename T>
+
+ANS- Yes, they are equivalent in the sense that they accomplish making the code after it into either a template class or function.

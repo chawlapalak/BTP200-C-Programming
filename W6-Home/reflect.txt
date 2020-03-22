@@ -1,0 +1,49 @@
+﻿//Palak Chawla
+// 118834175
+//BTP200SAA
+//18 March 2018
+
+1)	Why does the copy assignment operator check for self-assignment before do-ing anything else?
+Ans- self-assignment check is important before doing anything else because if we don’t worry about self assignment, it is highly likely to expose users to some very subtle bugs that have very subtle and often disastrous symptoms. For example, the following class will cause a complete disaster in the case of self-assignment:
+
+class Test
+{
+public:
+ 
+    ...
+ 
+private:
+    ptr* myptr;
+};
+
+Test& operator=(const Test& rhs)
+{
+    delete myptr;
+    myptr = new Test(*rhs.myptr);
+    return *this;
+}
+
+The first thing that we are doing here is delete the old copy of myptr so that no memory is leaked. Then, we make a copy of the right hand side’s myptr. This is where our problems start. What would happen in the above assignment operator if I tried to assign an object to itself? For example, if I wrote the following:
+
+Test t;
+t = t;
+
+In this case, the parameter rhs would be the same as the current object. So when we try to run the line 3 in the assignment operator, we’re trying to access and copy memory that has already been deleted. At this point, any number of things could happen. Some of the time, that memory will still belong to our process and will be unchanged, and our program will happily continue. But once in a while, the program will mysteriously crash. 
+
+
+2)	List how you avoided duplication of code.
+->Used function set_safe_empty() to avoid code duplication
+
+3)	List what you have learned in completing this workshop.
+-> copy constructor
+-> copy assignment operator
+-> self-referencing check of copy assignment operator
+-> dynamic memory allocation
+-> dynamic memory expansion
+-> destructor
+-> overlaoding += operator
+
+Quiz 6 Reflection
+
+Q3: What member does not get inherited ?
+A: Derived class cant inherit special members from the base class.
